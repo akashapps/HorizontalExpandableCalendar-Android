@@ -18,20 +18,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
-            android:textColor="@android:color/black"
+            android:textColor="#2196f3"
             android:textStyle="bold"
             tools:text="DATE"/>
 
-        <Button
-            android:id="@+id/scroll_to_today_button"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_margin="6dp"
-            android:background="#11000000"
-            android:text="TODAY"
-            android:textSize="10sp"/>
+        <!--<Button-->
+            <!--android:id="@+id/scroll_to_today_button"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_centerVertical="true"-->
+            <!--android:layout_margin="6dp"-->
+            <!--android:background="#11000000"-->
+            <!--android:text="TODAY"-->
+            <!--android:textSize="10sp"/>-->
 
     </RelativeLayout>
 

@@ -16,7 +16,7 @@ public class Config {
   private static final int RANGE_MONTHS_AFTER_INIT = 3;
   public static final DateTime INIT_DATE = new DateTime();
   public static final FirstDay FIRST_DAY_OF_WEEK = FirstDay.MONDAY;
-  public static final int CELL_WEEKEND_BACKGROUND = Color.parseColor("#FFF9DB");
+  public static final int CELL_WEEKEND_BACKGROUND = Color.parseColor("#FFFFFF");
   public static final int CELL_NON_WEEKEND_BACKGROUND = Color.WHITE;
   public static final int CELL_TEXT_CURRENT_MONTH_COLOR = Color.BLACK;
   public static final int CELL_TEXT_ANOTHER_MONTH_COLOR = Color.LTGRAY;

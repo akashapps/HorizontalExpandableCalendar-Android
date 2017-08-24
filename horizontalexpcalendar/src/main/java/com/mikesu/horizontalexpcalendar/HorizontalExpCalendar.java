@@ -169,16 +169,16 @@ public class HorizontalExpCalendar extends RelativeLayout implements PageView.Pa
 
   private void initTopContainer() {
     titleTextView = (TextView) findViewById(R.id.title);
-    findViewById(R.id.scroll_to_today_button).setOnClickListener(new OnClickListener() {
-      @Override
-      public void onClick(View view) {
-        if (!isLocked()) {
-          lock();
-          scrollToDate(new DateTime(), true, true, true);
-          unlock();
-        }
-      }
-    });
+//    findViewById(R.id.scroll_to_today_button).setOnClickListener(new OnClickListener() {
+//      @Override
+//      public void onClick(View view) {
+//        if (!isLocked()) {
+//          lock();
+//          scrollToDate(new DateTime(), true, true, true);
+//          unlock();
+//        }
+//      }
+//    });
   }
 
   private void initCenterContainer() {
@@ -313,7 +313,7 @@ public class HorizontalExpCalendar extends RelativeLayout implements PageView.Pa
         titleDate = Config.selectionDate;
       }
     }
-    titleTextView.setText(String.format("%s - %s", titleDate.getYear(), titleDate.getMonthOfYear()));
+    titleTextView.setText(String.format("%s", titleDate.toLocalDate().toString("MMM yyyy").toUpperCase()));
   }
 
   private void lock() {
