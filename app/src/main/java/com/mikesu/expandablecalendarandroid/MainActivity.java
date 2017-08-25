@@ -5,6 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import com.mikesu.horizontalexpcalendar.HorizontalExpCalendar;
 import com.mikesu.horizontalexpcalendar.common.Config;
+import com.mikesu.horizontalexpcalendar.common.Marks;
+import com.mikesu.horizontalexpcalendar.model.MarkSetup;
+
 import org.joda.time.DateTime;
 
 /**
@@ -26,6 +29,8 @@ public class MainActivity extends AppCompatActivity {
       @Override
       public void onCalendarScroll(DateTime dateTime) {
         Log.i(TAG, "onCalendarScroll: " + dateTime.toString());
+        Marks.refreshCustomMark(new DateTime(2017, 9, 14,0,0,0), Marks.CustomMarks.CUSTOM1,true);
+        horizontalExpCalendar.updateMarks();
       }
 
       @Override
