@@ -122,7 +122,7 @@ public class DayCellView extends BaseCellView {
     private void setMarkToView() {
         if (markSetup == null) {
             markContainer.setVisibility(GONE);
-
+            setTextColorByTimeType();
         } else {
             markContainer.setVisibility(VISIBLE);
             markToday.setVisibility(markSetup.isToday() ? VISIBLE : GONE);

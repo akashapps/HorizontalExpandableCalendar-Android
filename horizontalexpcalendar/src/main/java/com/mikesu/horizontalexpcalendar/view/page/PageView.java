@@ -107,7 +107,7 @@ public class PageView extends FrameLayout implements View.OnClickListener {
         label.setLayoutParams(labelParams);
         label.setText(Constants.NAME_OF_DAYS[(l + 1 + Utils.firstDayOffset()) % 7]);
         label.setDayType(Utils.isWeekendByColumnNumber(l) ? BaseCellView.DayType.WEEKEND : BaseCellView.DayType.NO_WEEKEND);
-
+        label.setTextColor(Config.COLOR_BLUE);
         gridLayout.addView(label);
 
       }

@@ -48,5 +48,7 @@ public class LabelCellView extends BaseCellView {
     setTextBackgroundByDayType();
   }
 
-
+  public void setTextColor(int colorBlue) {
+    this.text.setTextColor(colorBlue);
+  }
 }
