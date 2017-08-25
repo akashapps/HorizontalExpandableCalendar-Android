@@ -20,6 +20,7 @@ public class Config {
   public static final int CELL_NON_WEEKEND_BACKGROUND = Color.WHITE;
   public static final int CELL_TEXT_CURRENT_MONTH_COLOR = Color.BLACK;
   public static final int CELL_TEXT_ANOTHER_MONTH_COLOR = Color.LTGRAY;
+  public static final int CELL_TEXT_WHITE_COLOR = Color.WHITE;
   public static final boolean USE_DAY_LABELS = true;
   public static final boolean SCROLL_TO_SELECTED_AFTER_COLLAPSE = true;
   /* END CONFIGURATION */
