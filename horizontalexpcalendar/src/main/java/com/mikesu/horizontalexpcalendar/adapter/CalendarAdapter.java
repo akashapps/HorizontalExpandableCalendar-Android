@@ -80,6 +80,4 @@ public class CalendarAdapter extends PagerAdapter {
             pageView.updateMarks();
         }
     }
-
-
 }

@@ -111,20 +111,20 @@ public class HorizontalExpCalendar extends RelativeLayout implements PageView.Pa
         if (typedArray != null) {
             setupTopContainerFromAttr(typedArray);
             setupMiddleContainerFromAttr(typedArray);
-            //   setupBottomContainerFromAttr(typedArray);
+            setupBottomContainerFromAttr(typedArray);
             typedArray.recycle();
         }
 
         setHeightToCenterContainer(Utils.isMonthView() ? Config.monthViewPagerHeight : Config.weekViewPagerHeight);
     }
 
-//  private void setupBottomContainerFromAttr(TypedArray typedArray) {
-//    if (typedArray.hasValue(R.styleable.HorizontalExpCalendar_bottom_container_height)) {
-//      ((LinearLayout.LayoutParams) findViewById(R.id.bottom_container).getLayoutParams()).height =
-//          typedArray.getDimensionPixelSize(R.styleable.HorizontalExpCalendar_bottom_container_height,
-//              LinearLayout.LayoutParams.WRAP_CONTENT);
-//    }
-//  }
+  private void setupBottomContainerFromAttr(TypedArray typedArray) {
+    if (typedArray.hasValue(R.styleable.HorizontalExpCalendar_bottom_container_height)) {
+      ((LinearLayout.LayoutParams) findViewById(R.id.bottom_container).getLayoutParams()).height =
+          typedArray.getDimensionPixelSize(R.styleable.HorizontalExpCalendar_bottom_container_height,
+              LinearLayout.LayoutParams.WRAP_CONTENT);
+    }
+  }
 
     private void setupMiddleContainerFromAttr(TypedArray typedArray) {
         if (typedArray.hasValue(R.styleable.HorizontalExpCalendar_center_container_expanded_height)) {
@@ -152,7 +152,7 @@ public class HorizontalExpCalendar extends RelativeLayout implements PageView.Pa
     private void setupViews() {
         initTopContainer();
         initCenterContainer();
-        // initBottomContainer();
+        initBottomContainer();
         initAnimateContainer();
         refreshTitleTextView();
     }
@@ -183,33 +183,33 @@ public class HorizontalExpCalendar extends RelativeLayout implements PageView.Pa
         initWeekViewPager();
     }
 
-//  private void initBottomContainer() {
-//    findViewById(R.id.collapse_button).setOnClickListener(new OnClickListener() {
-//      @Override
-//      public void onClick(View view) {
-//        if (!isLocked()) {
-//          lock();
-//          if (Config.currentViewPager != Config.ViewPagerType.WEEK) {
-//            switchToView(Config.ViewPagerType.WEEK);
-//          }
-//          unlock();
-//        }
-//      }
-//    });
-//
-//    findViewById(R.id.expand_button).setOnClickListener(new OnClickListener() {
-//      @Override
-//      public void onClick(View view) {
-//        if (!isLocked()) {
-//          lock();
-//          if (Config.currentViewPager != Config.ViewPagerType.MONTH) {
-//            switchToView(Config.ViewPagerType.MONTH);
-//          }
-//          unlock();
-//        }
-//      }
-//    });
-//  }
+  private void initBottomContainer() {
+    findViewById(R.id.collapse_button).setOnClickListener(new OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        if (!isLocked()) {
+          lock();
+          if (Config.currentViewPager != Config.ViewPagerType.WEEK) {
+            switchToView(Config.ViewPagerType.WEEK);
+          }
+          unlock();
+        }
+      }
+    });
+
+    findViewById(R.id.expand_button).setOnClickListener(new OnClickListener() {
+      @Override
+      public void onClick(View view) {
+        if (!isLocked()) {
+          lock();
+          if (Config.currentViewPager != Config.ViewPagerType.MONTH) {
+            switchToView(Config.ViewPagerType.MONTH);
+          }
+          unlock();
+        }
+      }
+    });
+  }
 
     private void switchToView(final Config.ViewPagerType switchTo) {
         Config.currentViewPager = switchTo;
@@ -417,5 +417,13 @@ public class HorizontalExpCalendar extends RelativeLayout implements PageView.Pa
         void onDateSelected(DateTime dateTime);
 
         void onChangeViewPager(Config.ViewPagerType viewPagerType);
+    }
+
+    public CalendarAdapter getMonthPagerAdapter() {
+        return monthPagerAdapter;
+    }
+
+    public CalendarAdapter getWeekPagerAdapter() {
+        return weekPagerAdapter;
     }
 }

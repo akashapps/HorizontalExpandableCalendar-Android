@@ -27,8 +27,8 @@ public class Config {
   /* END CONFIGURATION */
     /* CONFIGURATION */
     private static final ViewPagerType INIT_VIEW = ViewPagerType.MONTH;
-    private static final int RANGE_MONTHS_BEFORE_INIT = 1;
-    private static final int RANGE_MONTHS_AFTER_INIT = 3;
+    private static final int RANGE_MONTHS_BEFORE_INIT = 50;
+    private static final int RANGE_MONTHS_AFTER_INIT = 50;
     public static final DateTime END_DATE = getEndDate();
     public static DateTime START_DATE = getStartDate();
     public static ViewPagerType currentViewPager = INIT_VIEW;

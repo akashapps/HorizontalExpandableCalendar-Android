@@ -87,9 +87,9 @@ public class PageView extends FrameLayout implements View.OnClickListener {
                 dayCellView.setMark(Marks.getMark(cellDate), Config.cellHeight);
                 dayCellView.setOnClickListener(this);
 
-                if (viewPagerType == Config.ViewPagerType.MONTH) {
+//                if (viewPagerType == Config.ViewPagerType.MONTH) {
                     dayCellView.setTimeType(getTimeType(cellDate));
-                }
+//                }
 
                 gridLayout.addView(dayCellView);
 
