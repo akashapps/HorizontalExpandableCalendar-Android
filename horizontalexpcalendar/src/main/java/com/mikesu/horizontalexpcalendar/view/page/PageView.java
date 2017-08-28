@@ -84,14 +84,14 @@ public class PageView extends FrameLayout implements View.OnClickListener {
                 dayCellView.setLayoutParams(cellParams);
                 dayCellView.setDayNumber(cellDate.getDayOfMonth());
                 dayCellView.setDayType(Utils.isWeekendByColumnNumber(c) ? BaseCellView.DayType.WEEKEND : BaseCellView.DayType.NO_WEEKEND);
-                dayCellView.setMark(Marks.getMark(cellDate), Config.cellHeight);
-                dayCellView.setOnClickListener(this);
-
                 if (viewPagerType == Config.ViewPagerType.MONTH) {
                     dayCellView.setTimeType(getTimeType(cellDate));
                 }else {
                     dayCellView.setTimeType(DayCellView.TimeType.CURRENT);
                 }
+
+                dayCellView.setMark(Marks.getMark(cellDate), Config.cellHeight);
+                dayCellView.setOnClickListener(this);
 
                 gridLayout.addView(dayCellView);
 

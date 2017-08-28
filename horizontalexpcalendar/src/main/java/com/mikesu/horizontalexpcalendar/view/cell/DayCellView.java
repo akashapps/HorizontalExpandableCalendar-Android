@@ -130,10 +130,18 @@ public class DayCellView extends BaseCellView {
             markCustom1.setVisibility(markSetup.isCustom1() ? VISIBLE : GONE);
             markCustom2.setVisibility(markSetup.isCustom2() ? VISIBLE : GONE);
 
-            if (markSetup.isSelected()) {
-                text.setTextColor(Config.CELL_TEXT_WHITE_COLOR);
-            } else {
-                setTextColorByTimeType();
+            if(markSetup.isToday()){
+                if (markSetup.isSelected()) {
+                    text.setTextColor(Config.CELL_TEXT_WHITE_COLOR);
+                } else {
+                    text.setTextColor(Config.COLOR_BLUE);
+                }
+            }else {
+                if (markSetup.isSelected()) {
+                    text.setTextColor(Config.CELL_TEXT_WHITE_COLOR);
+                } else {
+                    setTextColorByTimeType();
+                }
             }
         }
     }
